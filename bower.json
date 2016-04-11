@@ -1,0 +1,19 @@
+{
+  "name": "EDI_templates",
+  "homepage": "https://github.com/fabiopavesi/EDI_templates",
+  "authors": [
+    "Fabio Pavesi <fabio@adamassoft.it>"
+  ],
+  "description": "EDI-NG templates",
+  "main": "",
+  "moduleType": [],
+  "license": "GPL v3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
