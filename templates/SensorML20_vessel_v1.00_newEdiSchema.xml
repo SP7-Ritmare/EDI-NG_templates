@@ -190,7 +190,7 @@ ORDER BY ASC(?l) ASC(?a)
          <help xml:lang="it">È il nome con cui si identifica la nave (es. Sarmiento de Gamboa, ecc.).</help>
          <help xml:lang="en">Name assigned to identify the vessel. It should be short, while it is
             not its description (eg Sarmiento de Gamboa)</help>
-         <help xml:lang="es">Nombre asignado para identificar el recipiente. Debe ser breve, mientras que no es su descripción (por ejemplo, Sarmiento de Gamboa)</help>
+         <help xml:lang="es">Nombre asignado para la identificación del barco. Debe ser breve, no es una descripción (p.e., Sarmiento de Gamboa)</help>
          <hasRoot>/sml:PhysicalSystem</hasRoot>
          <produces>
             <item hasIndex="1" xml:id="system_name_1" outIndex="2" isFixed="false"
@@ -241,13 +241,14 @@ ORDER BY ASC(?l) ASC(?a)
       <element xml:id="free_keywords" isMandatory="false" isMultiple="true">
          <label xml:lang="it">Parole chiave a campo libero</label>
          <label xml:lang="en">Free keyword</label>
-         <label xml:lang="es">Palabra clave gratuito</label>
+         <label xml:lang="es">Palabras clave, campo de texto libre</label>
          <help xml:lang="it">Viene qui richiesto di indicare parole chiave che permettono una
             descrizione della nave, per permetterne il reperimento futuro. Questo campo a differenza
             del precedente è dedicato alle parole a testo libero e non riferite ad alcun vocabolario
             controllato.</help>
          <help xml:lang="en">Means of providing a list of keywords for quick discovery</help>
-         <help xml:lang="es">Medios para proporcionar una lista de palabras clave para el descubrimiento rápido</help>
+         <help xml:lang="es">Indica las palabras clave para una descripción de le la embarcación, permitiendo la búsqueda en un futuro. Este
+         campo se diferencia del anterior en que es un texto libre no adaptado a un vocabulario controlado</help>
          <hasRoot>/sml:PhysicalSystem/sml:keywords/sml:KeywordList</hasRoot>
          <produces>
             <item hasIndex="1" xml:id="free_keywords_1" isFixed="true" hasDatatype="string">
@@ -299,11 +300,14 @@ ORDER BY ASC(?l) ASC(?a)
    <group xml:id="sys_class">
       <label xml:lang="it">Classificazione del sistema</label>
       <label xml:lang="en">System Classifiers</label>
+      <label xml:lang="es">Clasificadores del sistema</label>
       <element xml:id="sensor_type" isMandatory="true" isMultiple="true">
          <label xml:lang="it">Tipologia sistema</label>
          <label xml:lang="en">Sensor type</label>
+         <label xml:lang="es">Tipología del sistema</label>
          <help xml:lang="it">Parola chiave che indica la tiplogia del sistema</help>
          <help xml:lang="en">Key words mean the typology of the system</help>
+         <help xml:lang="es">Palabras clave que indican la tipología del sistema</help>
          <hasRoot>/sml:PhysicalSystem/sml:classification/sml:ClassifierList</hasRoot>
          <produces>
             <item hasIndex="1" xml:id="sensor_type_1" isFixed="true" hasDatatype="1">
