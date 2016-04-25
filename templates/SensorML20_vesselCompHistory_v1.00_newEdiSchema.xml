@@ -116,7 +116,7 @@
                 ricalibrazione, ecc.)</help>
             <help xml:lang="en">Events regarding the vessel in time (e.g., calibration, adjustments,
                 etc.)</help>
-            <help xml:lang="es">Eventos del al buque en el tiempo (por ejemplo, calibración, ajustes, etc.)</help>
+            <help xml:lang="es">Eventos respecto al buque en el tiempo (por ejemplo, calibración, ajustes, etc.)</help>
             <hasRoot>/sml:EventList</hasRoot>
             <produces>
                 <item hasIndex="1" xml:id="history_1" isFixed="false" hasDatatype="text">
