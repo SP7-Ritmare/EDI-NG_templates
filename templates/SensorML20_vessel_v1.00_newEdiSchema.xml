@@ -119,19 +119,20 @@
                 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
                 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                     SELECT ?c ?l ?a
-                    WHERE {
-                    ?c rdf:type skos:Concept.
-                    <http://vocab.nerc.ac.uk/collection/L06/current/> skos:member ?c.
-                    OPTIONAL {
-                    ?c skos:prefLabel ?l.
-                    FILTER( LANG(?l) = "en")
-                    }
-                    OPTIONAL {
-                    ?c skos:prefLabel ?a.
-                    FILTER( LANG(?a) = "it")
-                    }
-                    FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
-                    }
+                        WHERE {
+                            ?c rdf:type skos:Concept;
+                                skos:broader <http://vocab.nerc.ac.uk/collection/L06/current/3Z/>.
+                            <http://vocab.nerc.ac.uk/collection/L06/current/> skos:member ?c.
+                            OPTIONAL {
+                                ?c skos:prefLabel ?l.
+                                FILTER( LANG(?l) = "en")
+                            }
+                            OPTIONAL {
+                                ?c skos:prefLabel ?a.
+                                FILTER( LANG(?a) = "it")
+                            }
+                            FILTER( REGEX( STR(?l), "", "i") || REGEX( STR(?a), "ves", "i") )
+                        }
                     ORDER BY ASC(?l) ASC(?a)
                     
             ]]></query>
