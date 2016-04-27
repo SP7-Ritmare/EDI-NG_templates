@@ -131,7 +131,7 @@
                                 ?c skos:prefLabel ?a.
                                 FILTER( LANG(?a) = "it")
                             }
-                            FILTER( REGEX( STR(?l), "", "i") || REGEX( STR(?a), "ves", "i") )
+                            FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
                         }
                     ORDER BY ASC(?l) ASC(?a)
                     
