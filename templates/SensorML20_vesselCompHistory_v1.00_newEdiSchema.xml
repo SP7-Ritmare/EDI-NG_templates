@@ -109,12 +109,12 @@
         <label xml:lang="en">Instrument Composition History</label>
         <label xml:lang="es">Histórico de composición instrumental</label>
         <element xml:id="history" isMandatory="true" isMultiple="true">
-            <label xml:lang="it">Strumentazione imbarco</label>
-            <label xml:lang="en">Instrument embarkment</label>
+            <label xml:lang="it">Strumentazione a bordo</label>
+            <label xml:lang="en">Instrument on board</label>
             <label xml:lang="es">Embarque de instrumentación</label>
             <help xml:lang="it">Strumentazione imbarco sulla nave nel tempo (es. modifiche,
                 ricalibrazione, ecc.)</help>
-            <help xml:lang="en">Instrument embarkment in a vessel in time (e.g., calibration, adjustments,
+            <help xml:lang="en">Instrument in a vessel in time (e.g., calibration, adjustments,
                 etc.)</help>
             <help xml:lang="es">Embarque de la instrumentación del buque en el tiempo (p.e, calibración, ajustes, etc.)</help>
             <hasRoot>/sml:EventList</hasRoot>
@@ -146,8 +146,7 @@
                         <hasPath>sml:event/sml:Event/sml:time/gml:TimePeriod/gml:endPosition</hasPath>
                     </end>
                 </item>
-                <!-- TO DO: incremental value -->
-                <item hasIndex="3" xml:id="history_3" isFixed="true" hasDatatype="string">
+                <item hasIndex="3" xml:id="history_3" isFixed="true" hasDatatype="autonumber">
                     <hasPath>sml:event/sml:Event/sml:time/gml:TimePeriod/@gml:id</hasPath>
                     <hasValue>operation_interval_</hasValue>
                 </item>
