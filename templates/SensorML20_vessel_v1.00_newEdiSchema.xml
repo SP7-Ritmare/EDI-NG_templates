@@ -93,17 +93,17 @@
                 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                     SELECT ?c ?l ?a
                     WHERE {
-                    ?c rdf:type skos:Concept.
-                    <http://vocab.nerc.ac.uk/collection/L05/current/> skos:member ?c.
-                    OPTIONAL {
-                    ?c skos:prefLabel ?l.
-                    FILTER( LANG(?l) = "en")
-                    }
-                    OPTIONAL {
-                    ?c skos:prefLabel ?a.
-                    FILTER( LANG(?a) = "it")
-                    }
-                    FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
+                        ?c rdf:type skos:Concept.
+                        <http://vocab.nerc.ac.uk/collection/L05/current/> skos:member ?c.
+                        OPTIONAL {
+                            ?c skos:prefLabel ?l.
+                            FILTER( LANG(?l) = "en")
+                        }
+                        OPTIONAL {
+                            ?c skos:prefLabel ?a.
+                            FILTER( LANG(?a) = "it")
+                        }
+                        FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
                     }
                     ORDER BY ASC(?l) ASC(?a)
                     
@@ -148,17 +148,17 @@
                   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                       SELECT ?c ?l ?a
                       WHERE {
-                      ?c rdf:type skos:Concept.
-                      <http://vocab.nerc.ac.uk/collection/W01/current/> skos:member ?c.
-                      OPTIONAL {
-                      ?c skos:prefLabel ?l.
-                      FILTER( LANG(?l) = "en")
-                      }
-                      OPTIONAL {
-                      ?c skos:prefLabel ?a.
-                      FILTER( LANG(?a) = "it")
-                      }
-                      FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
+                          ?c rdf:type skos:Concept.
+                          <http://vocab.nerc.ac.uk/collection/W01/current/> skos:member ?c.
+                          OPTIONAL {
+                              ?c skos:prefLabel ?l.
+                              FILTER( LANG(?l) = "en")
+                          }
+                          OPTIONAL {
+                              ?c skos:prefLabel ?a.
+                              FILTER( LANG(?a) = "it")
+                          }
+                          FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
                       }
                       ORDER BY ASC(?l) ASC(?a)
 
@@ -381,15 +381,15 @@
         <singleton xml:id="manufacturers" endpointType="virtuoso">
             <query><![CDATA[
 
-                        PREFIX ns: <http://www.w3.org/2006/vcard/ns#>
-                        SELECT ?c ?l
-                        FROM <http://ritmare.it/rdfdata/manufacturers>
-                        WHERE {
-                          ?c rdf:type foaf:Organization.
-                          ?c foaf:name ?l.
-                          FILTER( REGEX( STR(?l), "$search_param", "i") )
-                        }
-                        ORDER BY ASC(?l)
+                PREFIX ns: <http://www.w3.org/2006/vcard/ns#>
+                SELECT ?c ?l
+                FROM <http://ritmare.it/rdfdata/manufacturers>
+                WHERE {
+                    ?c rdf:type foaf:Organization.
+                    ?c foaf:name ?l.
+                    FILTER( REGEX( STR(?l), "$search_param", "i") )
+                }
+                ORDER BY ASC(?l)
 
             ]]></query>
         </singleton>
@@ -397,74 +397,74 @@
             triggerItem="builder_name_3_uri">
             <query><![CDATA[
 
-                          PREFIX addr: <http://wymiwyg.org/ontologies/foaf/postaddress#>
-                          PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
-                          SELECT ?phone fn:concat(?l1, ', ', ?l2) AS ?addr ?town ?region ?postcode ?country ?email ?homepage
-                          FROM <http://ritmare.it/rdfdata/manufacturers>
-                          WHERE {
-                            OPTIONAL {
-                              <$search_param> foaf:phone ?phone .
-                            }
-                            OPTIONAL {
-                              <$search_param> vcard:email ?email.
-                            }
-                            OPTIONAL {
-                              <$search_param> foaf:homepage ?homepage.
-                            }
-                            OPTIONAL {
-                              <$search_param> addr:address ?b1.
-                            }
-                            OPTIONAL {
-                              ?b1 addr:deliveryPoint ?b2.
-                            }
-                            OPTIONAL {
-                              ?b2 addr:location ?b3.
-                            }
-                            OPTIONAL {
-                              ?b3 addr:thoroughfareName ?l1.
-                            }
-                            OPTIONAL {
-                              ?b3 addr:streetNr ?l2.
-                            }
-                            OPTIONAL {
-                              ?b3 addr:town ?town.
-                            }
-                            OPTIONAL {
-                              ?b3 addr:region ?region.
-                            }
-                            OPTIONAL {
-                              ?b3 addr:postcode ?postcode.
-                            }
-                            OPTIONAL {
-                              ?b3 addr:country ?country.
-                            }
-                          }
+                PREFIX addr: <http://wymiwyg.org/ontologies/foaf/postaddress#>
+                PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+                SELECT ?phone fn:concat(?l1, ', ', ?l2) AS ?addr ?town ?region ?postcode ?country ?email ?homepage
+                FROM <http://ritmare.it/rdfdata/manufacturers>
+                WHERE {
+                    OPTIONAL {
+                      <$search_param> foaf:phone ?phone .
+                    }
+                    OPTIONAL {
+                      <$search_param> vcard:email ?email.
+                    }
+                    OPTIONAL {
+                      <$search_param> foaf:homepage ?homepage.
+                    }
+                    OPTIONAL {
+                      <$search_param> addr:address ?b1.
+                    }
+                    OPTIONAL {
+                      ?b1 addr:deliveryPoint ?b2.
+                    }
+                    OPTIONAL {
+                      ?b2 addr:location ?b3.
+                    }
+                    OPTIONAL {
+                      ?b3 addr:thoroughfareName ?l1.
+                    }
+                    OPTIONAL {
+                      ?b3 addr:streetNr ?l2.
+                    }
+                    OPTIONAL {
+                      ?b3 addr:town ?town.
+                    }
+                    OPTIONAL {
+                      ?b3 addr:region ?region.
+                    }
+                    OPTIONAL {
+                      ?b3 addr:postcode ?postcode.
+                    }
+                    OPTIONAL {
+                      ?b3 addr:country ?country.
+                    }
+              }
 
               ]]></query>
         </singleton>
         <singleton xml:id="uom" endpointType="virtuoso">
             <query><![CDATA[
                 
-                        PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
-                        SELECT ?c ?l ?urn
-                        FROM <http://ritmare.it/rdfdata/units>
-                        WHERE { 
-                          ?c rdf:type skos:Concept.
-                          OPTIONAL {
-                            ?c skos:prefLabel ?l.
-                            FILTER( LANG(?l) = "en")
-                          }
-                          OPTIONAL {
-                            ?c skos:prefLabel ?a.
-                            FILTER( LANG(?a) = "en")
-                          }
-                          OPTIONAL {
-                            ?c skos:altLabel ?urn.
-                            FILTER( LANG(?urn) = "en")
-                          }
-                          FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
-                        }
-                        ORDER BY ASC(?l) ASC(?a)
+                PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+                SELECT ?c ?l ?urn
+                FROM <http://ritmare.it/rdfdata/units>
+                WHERE {
+                    ?c rdf:type skos:Concept.
+                    OPTIONAL {
+                        ?c skos:prefLabel ?l.
+                        FILTER( LANG(?l) = "en")
+                    }
+                    OPTIONAL {
+                        ?c skos:prefLabel ?a.
+                        FILTER( LANG(?a) = "en")
+                    }
+                    OPTIONAL {
+                        ?c skos:altLabel ?urn.
+                        FILTER( LANG(?urn) = "en")
+                    }
+                    FILTER( REGEX( STR(?l), "$search_param", "i") || REGEX( STR(?a), "$search_param", "i") )
+                }
+                ORDER BY ASC(?l) ASC(?a)
                         
             ]]></query>
         </singleton>
@@ -1103,7 +1103,7 @@
                     isFixed="false" hasDatatype="select" datasource="info_manufacturers">
                     <label xml:lang="it">Telefono costrutture</label>
                     <label xml:lang="es">Número de teléfono del constructor</label>
-                    <label xml:lang="en">Builder phone number/label>/>
+                    <label xml:lang="en">Builder phone number</label>
                     <hasPath>
                         gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:phone/gmd:CI_Telephone/gmd:voice/gco:CharacterString
                     </hasPath>
@@ -1486,8 +1486,7 @@
                 <item hasDatatype="URL" hasIndex="2" xml:id="compoHistModif_2" isFixed="false">
                     <label xml:lang="it">Aggiungere link all'XML della composizione della
                         strumentazione di bordo </label>
-                    <label xml:lang="en">Add the link to the Composition Instrument History xml
-                        file</label>
+                    <label xml:lang="en">Add the link to the Composition Instrument History xml file</label>
                     <label xml:lang="es">Añadir enlaces a HTML de la composición de la
                         instrumentación bordo</label>
                     <hasPath>sml:history/@xlink:href</hasPath>
