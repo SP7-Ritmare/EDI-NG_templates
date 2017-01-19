@@ -174,7 +174,7 @@ LIMIT 1
     <!-- ====== -->
     <!-- GML:ID -->
     <!-- ====== -->
-    <group xml:id="UUID">
+    <!--<group xml:id="UUID">
         <element isMandatory="true" isMultiple="false" xml:id="UUIDEMF">
             <hasRoot>/ef:EnvironmentalMonitoringFacility</hasRoot>
             <produces>
@@ -184,7 +184,7 @@ LIMIT 1
                 </item>
             </produces>
         </element>
-    </group>
+    </group>-->
     
     <!-- ========= -->
     <!-- inspireId -->
